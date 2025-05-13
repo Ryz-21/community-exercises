@@ -210,37 +210,3 @@ while eco != "salir":
     eco = input("escribir palabra para formar el eco")
     
 print("salida exitosa")
-"""
-
-
-"""
-def bussquedalinealmultiple (lista,valor):
-
-    indice = [i for i ,in enumerate(lista) if valor == i]
-    return indice if indice else -1
-"""
-
-"""
-def busquedalineal (lista, valor):
-    for i in enumerate(lista):
-        if i == valor:
-            return i
-    return -1
-"""
-
-"""
-def busquedamatriz (matriz,valor):
-    for i in enumerate(matriz):
-        for e in enumerate(i):
-            if e == valor:
-                return i , e
-    return -1 
-"""
-
-
-"""
-def busquedamatrizmultiple (matriz,valor):
-    indice = [(i,e) for i ,fila in enumerate(matriz)
-               for e , element in enumerate(fila) if element == valor]
-    return indice if indice else -1
-"""
