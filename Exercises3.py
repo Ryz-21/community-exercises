@@ -128,6 +128,18 @@ elif renta > 60000:
 # así como la cantidad de dinero #que recibirá el usuario.
 
 
+puntaje = float(input("ingresar os puntos que deben obtener"))
+
+dinero = 2400
+
+if puntaje == 0.0:
+    print("su sueldo es", dinero)
+elif puntaje == 0.4:
+    print("su sueldo es" , dinero*0.4)
+elif puntaje >= 0.6:
+     print("su sueldo es" , dinero*0.6)
+else:
+    print("error esta fuera de rango")
 
 
 
@@ -136,7 +148,14 @@ elif renta > 60000:
 # #el precio que debe cobrar a sus clientes por entrar. El programa debe preguntar al usuario la edad del cliente y mostrar el
 # #precio de la entrada. Si el cliente es menor de 4 años puede entrar gratis, si tiene entre 4 y 18 años debe pagar 5€ y si #es mayor de 18 años, 10€.
 
+edad = int(input("ingresar tu edad para los juegos"))
 
+if edad < 4:
+    print("puede ingresar gratis")
+elif 4 <= edad <= 18:
+    print("debes pagar 5 euros")
+else:
+    print("paga 10 euros")
 
 #Ejercicio 10
 #La pizzería Bella Napoli ofrece pizzas vegetarianas y no vegetarianas a sus clientes.
@@ -150,3 +169,45 @@ elif renta > 60000:
 # Solo se puede eligir un ingrediente además de la mozzarella y el tomate que están en todas la pizzas.
 # Al final se debe mostrar por pantalla si la pizza elegida es vegetariana o no y todos los ingredientes que lleva.
 
+print("Bienvenido a la pizzería Bella Napoli")
+print("¿Desea una pizza vegetariana?")
+respuesta = input("Responda 'sí' o 'no': ").lower()
+
+if respuesta == "sí" or respuesta == "si":
+    print("Ha elegido una pizza vegetariana.")
+    print("Ingredientes disponibles:")
+    print("1. Pimiento")
+    print("2. Tofu")
+    opcion = input("Elija el número del ingrediente (1 o 2): ")
+
+    if opcion == "1":
+        ingrediente = "Pimiento"
+        print("Pizza vegetariana con mozzarella, tomate y", ingrediente)
+    elif opcion == "2":
+        ingrediente = "Tofu"
+        print("Pizza vegetariana con mozzarella, tomate y", ingrediente)
+    else:
+        print("Opción no válida.")
+
+elif respuesta == "no":
+    print("Ha elegido una pizza no vegetariana.")
+    print("Ingredientes disponibles:")
+    print("1. Peperoni")
+    print("2. Jamón")
+    print("3. Salmón")
+    opcion = input("Elija el número del ingrediente (1, 2 o 3): ")
+
+    if opcion == "1":
+        ingrediente = "Peperoni"
+        print("Pizza no vegetariana con mozzarella, tomate y", ingrediente)
+    elif opcion == "2":
+        ingrediente = "Jamón"
+        print("Pizza no vegetariana con mozzarella, tomate y", ingrediente)
+    elif opcion == "3":
+        ingrediente = "Salmón"
+        print("Pizza no vegetariana con mozzarella, tomate y", ingrediente)
+    else:
+        print("Opción no válida.")
+
+else:
+    print("Respuesta no válida. Por favor escriba 'sí' o 'no'.")
