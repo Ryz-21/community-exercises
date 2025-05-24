@@ -1,3 +1,4 @@
+import math
 
 #TRY ! EXCEPT ! FINALLY
 
@@ -36,6 +37,7 @@ finally: # si o si se imprime
     print("esto siempre se va a ejecutar")
 
 """
+
 
 #control de las exceptiones con while
 
@@ -138,10 +140,113 @@ while(True):
 
 #Intenta abrir un archivo, leer su contenido y siempre ciérralo en el bloque finally, aunque ocurra un error.
 
+
+"""
+file = "notas.txt"
+
+while True:
+    try:
+        f = open(file, "r", encoding="utf-8")
+        contenido = f.read()
+        print(contenido)
+        break  # Si la lectura es exitosa, salimos del bucle
+    except FileNotFoundError:
+        print("El archivo no fue encontrado.")
+        break  # Si no existe, también salimos
+    except Exception as e:
+        print(f"Ocurrió un error: {e}")
+        break
+    finally:
+        try:
+            f.close()
+        except:
+            pass  
+
+"""
+
 #Simula un sistema de autenticación que lanza una excepción si el usuario o contraseña están vacíos. Usa try-except-finally.
 
+"""
+admin = "leo"
+password ="samael102104"
+while(True):
+    try:
+        usuario = input("ingresar usuario")
+        contraseña = input("ingresar contraseña")
+        if usuario == "" or  contraseña == "":
+            raise ValueError("usuario o contraseña no pueden estar vacios")
+        else:
+         if usuario == admin and password == contraseña:
+            print("autenticacion correcta")
+            break
+         else:
+             print("usuario o contraseña incorrecto")
+
+    except ValueError as ve:
+        print(f"error{ve}")
+    finally:
+        print("conexion correcta")
+"""
+
 #Realiza una operación matemática (raíz cuadrada) y lanza una excepción si el número ingresado es negativo.
+"""
+while(True):
+    try:
+        numero = int(input("ingresar numero a sacar raiz cuadrada"))
 
-#Simula la compra de un producto. Si el usuario ingresa un valor no numérico para la cantidad o el precio, captura el error.
+        if numero < 1 :
+            raise ValueError("el numero no puede ser menor a 1")
+        else:
+            raiz = math.sqrt(numero)
+            print("la raiz cuadrada es:" , raiz)
+    except ValueError as ve:
+     print(f"error{ve}")
+    finally:
+        print("conexion establecida")
+"""
+#Simula la compra de un producto. Si el usuario ingresa un valor no numérico para la cantidad o el precio
+# captura el error.
 
-#Escribe una función que recibe dos parámetros numéricos. Si alguno no es número, lanza y captura una excepción.
+"""
+opciones = {"zapatos": 120, "casaca":80 , "polo":30}
+
+opcion = input("ingresar producto a querer comprar zapatos , casaca , polo")
+try:
+  if opcion in opciones:
+     print("producto encontrado")
+
+     cantidad = int(input("ingresar cantidad de producto que deseaa llevar"))
+     if cantidad < 1:
+         raise ValueError("no puede ser menor a 1")
+     else:
+         print("confirmado")
+
+     precio = opciones[opcion]
+
+     total = cantidad*precio
+     print("el precio a pagar es", total)
+     pago = float(input("ingresar con cuanto va a cancelar el pedido"))
+     if pago < total:
+         raise  ValueError(f"no puede ser menor a {total} ")
+     print("confirmado")
+  else:
+     print("producto no encontrado")
+except ValueError as e:
+ print(f"error: {e}")
+finally:
+    print("ejecucion finalizada")
+"""
+
+#Escribe una función que recibe dos parámetros numéricos.
+# Si alguno no es número, lanza y captura una excepción.
+
+"""
+def suma (a,b):
+ try:
+     resultado = a+b
+     return resultado
+ except TypeError:
+     print("no son numeros no se puede sumar")
+
+print(suma(23,4))
+"""
