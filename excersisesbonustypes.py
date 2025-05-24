@@ -66,3 +66,36 @@ letra_97 = chr(97)   # "a"
 # Ejemplo con input
 # letra = input("Ingresa una letra: ")
 # print(f"El código ASCII de {letra} es {ord(letra)}")
+
+# Entero (int)
+x = 10
+print(type(x), x)  # <class 'int'> 10
+
+# Flotante (float)
+y = 3.14
+print(type(y), y)  # <class 'float'> 3.14
+
+# Cadena de texto (str)
+s = "Hola"
+print(type(s), s)  # <class 'str'> Hola
+
+# Booleano (bool)
+b = True
+print(type(b), b)  # <class 'bool'> True
+
+# Lista (list) - Mutable
+l = [1, 2, 3]
+print(type(l), l)  # <class 'list'> [1, 2, 3]
+
+# Tupla (tuple) - Inmutable
+t = (1, 2, 3)
+print(type(t), t)  # <class 'tuple'> (1, 2, 3)
+
+# Diccionario (dict) - Clave-valor
+d = {"a": 1, "b": 2}
+print(type(d), d)  # <class 'dict'> {'a': 1, 'b': 2}
+
+# Conjunto (set) - Sin duplicados
+s = {1, 2, 3, 3, 2, 1}
+print(type(s), s)  # <class 'set'> {1, 2, 3}
+
