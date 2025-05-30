@@ -90,9 +90,22 @@ print(invertir_cadena())
 #Nivel Intermedio
 #Factorial de un número
 #Crea una función factorial(n) que devuelva el factorial de un número utilizando recursión.
-
+def factorial(n):
+    if n <= 1:
+        return  1
+    else:
+        return  n * factorial(n - 1)
+print(factorial(2))
 #Comprobar si una palabra es palíndromo
 #Define una función es_palindromo(palabra) que determine si una palabra es igual al revés.
+def comprobar (palabra):
+    a = palabra[::-1]
+    if palabra == a:
+        return "palabra palindroma"
+    else:
+       return "la palabra no es palindroma"
+
+print(comprobar("ala"))
 
 #Generador de números primos
 #Crea una función primos_hasta(n) que devuelva una lista con todos los números primos hasta n.
