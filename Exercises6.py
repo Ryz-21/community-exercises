@@ -110,8 +110,49 @@ print(comprobar("ala"))
 #Generador de números primos
 #Crea una función primos_hasta(n) que devuelva una lista con todos los números primos hasta n.
 
+
+def primos_hasta(n):
+    if n <= 2:
+        return []
+    primos = []
+
+    for i in range (2,n + 1):
+        primo = True
+        for j in range (2,int(i**0.5)+1):
+            if i % j == 0:
+                primo = False
+                break
+            if primo:
+                primos.append(i)
+        return primos
+
+
 #Conversor de grados
 #Escribe una función convertir_temperatura(valor, unidad) que convierta entre Celsius y Fahrenheit.
 
+def convertir_temperatura(valor,unidad):
+    if unidad.lower() == "c":
+        #convertir de celius a F
+        fahrenheit = (valor*9/5) + 32
+        return f"{valor}°C = {fahrenheit:.2f}°F"
+
+    elif unidad.lower() == "f":
+        celsius = (valor-32) * 5/9
+        return f"{valor}°F = {celsius:.2f}°C"
+        
+    else:
+        return "Unidad no válida. Usa 'C' para Celsius o 'F' para Fahrenheit."
+
+print(convertir_temperatura(21,"f"))
+
 #Contador de palabras únicas
 #Crea una función contar_palabras_unicas(texto) que reciba una cadena y retorne cuántas palabras únicas hay.
+
+
+def contar_palabras_unicas(texto):
+    palabras = texto.lower().split()
+    palabras_unicas = set(palabras) # set para eliminar duplicados
+    return len(palabras_unicas)
+
+frase = "Hola mundo hola Mundo mundo"
+print(contar_palabras_unicas(frase))  
