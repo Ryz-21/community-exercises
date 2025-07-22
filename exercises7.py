@@ -187,3 +187,53 @@ precio_maximo = max(lista_precios)
 precio_minimo = min(lista_precios)
 
 print(f"el precio mayor es {precio_maximo} y el precio menor es {precio_minimo}")
+
+#Ejercicio 11
+#Escribir un programa que almacene los vectores (1,2,3) y (-1,0,2) 
+#en dos listas y muestre por pantalla su producto escalar.
+
+"""
+vector1 = [1,2,3]
+vector2 = [-1,0,2]
+
+producto_escalar = 0
+
+for i in range (len(vector1)):
+    producto_escalar += vector1[i] * vector2[i] 
+
+print(f"el producto escalar es {producto_escalar}")
+"""
+
+#Ejercicio 12
+#Escribir un programa que almacene las matrices
+"""
+a = [[1, 2, 3],[4,5,6]]
+b = [[-1,0],[-1,0],[1,1]]
+
+resultado = [[0,0],[0,0]]
+
+for i in range(len(a)):
+    for j in range (len(b[0])):
+        for k in range(len(b)):
+            resultado[i][j] += a[i][k] * b[k][j]
+
+for fila in resultado:
+    print(fila)
+    """
+
+#ejercicio 13
+#Escribir un programa que pregunte por una muestra de números, separados por comas, los guarde en una lista 
+#y muestre por pantalla su media y desviación típica.
+
+entrada = input("ingresar numeros")
+lista = [float(x.strip()) for x in entrada.split(",")]
+
+media = sum(lista) / len(lista)
+
+suma_cuadrados = sum((x - media)** 2 for x in lista)
+desviacion_tipica = math.sqrt(suma_cuadrados/len(lista))
+
+print(f"Media: {media:.2f}")
+print(f"Desviación típica: {desviacion_tipica:.2f}")
+
+
